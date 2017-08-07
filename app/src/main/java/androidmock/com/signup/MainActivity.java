@@ -22,7 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -118,6 +118,17 @@ private void startsignin() {
                     // ...
                 }
             });
+    
+ @Override
+  public void onClick(View v) {
+
+    if(v.getId() == R.id.background){
+      InputMethodManager methodmanager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+      methodmanager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
+
     }
+  }
+
+}
 
 }
